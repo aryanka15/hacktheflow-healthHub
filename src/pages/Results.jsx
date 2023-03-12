@@ -39,9 +39,11 @@ export const options = {
 const labels = ["Day 1", "Day 7", "Day 13", "Day 19", "Day 25"];
 
 if (localStorage.getItem("chartData") == null) {
-  let weight = parseInt(JSON.parse(localStorage.getItem("data")).weight);
-  let newData = [weight];
-  localStorage.setItem("chartData", JSON.stringify(newData));
+  if (localStorage.getItem("data") !== null) {
+    let weight = parseInt(JSON.parse(localStorage.getItem("data")).weight);
+    let newData = [weight];
+    localStorage.setItem("chartData", JSON.stringify(newData));
+  }
 }
 
 let chartData = {
@@ -98,7 +100,7 @@ export default function Results() {
             onClick={() => {
               submitWeightLog(i);
             }}
-            className="border-2 bg-yellow-500 border-yellow-600 p-1"
+            className="border-2 bg-blue-500 border-blue-600 p-1"
           >
             Submit
           </button>
@@ -110,9 +112,9 @@ export default function Results() {
       checked = true;
     }
     let html = (
-      <div id={"day" + i} className="border-2 border-yellow-400">
+      <div id={"day" + i} className="border-blue-400 rounded-xl border-[6px]">
         <div className="flex flex-row justify-center items-center mt-2 space-x-2">
-          <h1>Day {i}</h1>
+          <h1 className="font-bold">Day {i}</h1>
           <input
             type="checkbox"
             defaultChecked={checked}
@@ -254,8 +256,8 @@ export default function Results() {
   return (
     <>
       <Nav></Nav>
-      <div className="flex flex-col h-fit text-center  bg-yellow-200">
-        <div className="flex flex-row border-b-[4px] text-center border-yellow-400 items-center justify-center">
+      <div className="flex flex-col h-fit text-center  bg-blue-200">
+        <div className="flex flex-row text-center border-blue-400 items-center justify-center">
           <div className="absolute left-12">
             <button onClick={showNav}>
               <i className="fa-solid fa-bars"></i>
@@ -265,8 +267,10 @@ export default function Results() {
             <h1 className="mt-4 pb-4 text-4xl font-bold">Your Personal Plan</h1>
           </div>
         </div>
-        <div className="grow grid grid-rows-5 grid-cols-6">{calendarDivs}</div>
-        <div className="flex flex-row border-t-2 border-4 border-yellow-400 items-center space-x-5 pl-3">
+        <div className="grow grid grid-rows-5 grid-cols-6 gap-y-5 gap-x-3 p-3">
+          {calendarDivs}
+        </div>
+        <div className="flex flex-row border-blue-400 items-center space-x-5 pl-3">
           <h1 className="text-2xl">Key:</h1>
           <h1>
             <i className="fa-solid fa-burger"></i> - Calorie Intake
