@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu | Health Weather Website</title>
+    <link rel="stylesheet" href="looks.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="sidebar_navbar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class='bx bx1-c-plus-plus'></i>
+                <div class="logo_name">Your Health Portal</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                    <i class='bx bx-search'></i>
+                    <span class="links_name">Search</span>
+
+                    <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-info-circle'></i>
+                    <span class="links_name">Me</span>
+                </a>
+                <span class="tooltip">Me</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-water' ></i>
+                    <span class="list_name">Water Tracker</span>
+                </a>
+                <span class="tooltip">Water Tracker</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-food-menu'></i>
+                    <span class="links_name">Food</span>
+                </a>
+                <span class="tooltip">Food</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-envelope'></i>
+                    <span class="links_name">Contact</span>
+                </a>
+                <span class="tooltip">Contact</span> 
+            </li>
+        </ul>
+    </div>
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar_navbar");
+        let searchBtn = document.querySelector(".bx-search");
+
+        btn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+
+        searchBtn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

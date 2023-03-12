@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="looks.css">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./looks.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="card">
+        <div class="search-wrapper">
+            <input type="text" class="search-bar" id="search" placeholder="Search">
+        </div>
+        <div class="weather">
+            <h2 class="city">Weather in Houston</h2>
+            <h1 class="temp">11°C</h1>
+            <div class="flex">
+                <img src="https://openweathermap.org/img/wn/04d.png" alt="" class="icon" />
+                <div class="description">Cloudy</div>
+            </div>
+            <div class="humidity">Humidity: 60%</div>
+            <div class="wind">Wind speed: 6.2 km</div>
+            <div class="outdoor">At least 30 min of outdoor exposer is advised!</div>
+            <div class="thirsty"><br>Doctor Locations Based on Your Location:</br></div>
+                <a href="https://www.google.com/search?rlz=1C1SQJL_enUS895US895&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=AJOqlzWeU_FcLrLhEFrP0A1xod-PsCKecg:1673191330029&q=doctor+offices+near+me&rflfq=1&num=10&sa=X&ved=2ahUKEwiqg_i2o7j8AhWfHTQIHbtMBlAQjGp6BAgXEAE&biw=1597&bih=1599&dpr=1.2#rlfi=hd:;si:;mv:[[47.720321,-122.0266381],[47.6230185,-122.14660099999998]];tbs:lrf:!1m4!1u45!2m2!46m1!1e1!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2" class="navlink" style="color:aquamarine">Doctor Offices Near You</a>
+            <div class="shelter">Need shade or some type of covering visit:</div>
+                <a href="https://www.google.com/maps/search/shelters/@47.6817457,-122.0960338,11z/data=!3m1!4b1" class="navlink" style="color:aquamarine">Shelters Near You</a>
+           
+        </div>
+        
+        <div class="sidebar_navbar">
+            <div class="logo_name">Your Health Portal</div>
+            <i class='bx bx-menu' id="btn"></i>
+            <ul class="nav_list">
+                <li>
+                    <a href="home.html">
+                        <i class='bx bx-search' ></i>
+                        <span class="links_name">Search</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="me.html">
+                        <i class='bx bx-info-circle' ></i>
+                        <span class="links_name">Me</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="waterTracker.html">
+                        <i class='bx bx-water' ></i>
+                        <span class="links_name">Water Tracker</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="food.html">
+                        <i class='bx bx-food-menu' ></i>
+                        <span class="links_name">Food</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class='bx bx-envelope' ></i>
+                        <span class="links_name">Contact</span>
+                    </a>
+                    
+                </li>
+            </ul>
+            
+        </div>
+        
+        <script>
+            let btn = document.querySelector("#btn");
+            let sidebar = document.querySelector(".sidebar_navbar");
+            let searchBtn = document.querySelector(".bx-search");
+    
+            btn.onclick = function(){
+                sidebar.classList.toggle("active");
+            }
+    
+            searchBtn.onclick = function(){
+                sidebar.classList.toggle("active");
+            }
+        </script>
+        
+    
+    </div>
+    
+</body>
+</html>

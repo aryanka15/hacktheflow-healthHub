@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="looks.css">
+</head>
+<body>
+    <div class="card">
+        <div class="sidebar_navbar">
+            <div class="logo_name">Your Health Portal</div>
+            <!--<img src="WeatherApp Icon.png" class="image" width="100" height="100"> -->
+            <i class='bx bx-menu' id="btn"></i>
+            <ul class="nav_list">
+                <li>
+                    <a href="home.html">
+                        <i class='bx bx-search' ></i>
+                        <span class="links_name">Search</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="me.html">
+                        <i class='bx bx-info-circle' ></i>
+                        <span class="links_name">Me</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="waterTracker.html">
+                        <i class='bx bx-water' ></i>
+                        <span class="links_name">Water Tracker</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="food.html">
+                        <i class='bx bx-food-menu' ></i>
+                        <span class="links_name">Food</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class='bx bx-envelope' ></i>
+                        <span class="links_name">Contact</span>
+                    </a>
+                    
+                </li>
+            </ul>
+            
+        </div>
+        
+        <script>
+            let btn = document.querySelector("#btn");
+            let sidebar = document.querySelector(".sidebar_navbar");
+            let searchBtn = document.querySelector(".bx-search");
+    
+            btn.onclick = function(){
+                sidebar.classList.toggle("active");
+            }
+    
+            searchBtn.onclick = function(){
+                sidebar.classList.toggle("active");
+            }
+        </script>
+        
+        <h1 class="aboutMe">About Me!</h1>
+        <p>Thank you for spending time watching this video and I hope you enjoyed our project as it took us hours upon hours to make, working deep into the night and early in the morning. Thank you!</p>
+        
+        <style>
+            body{text-align: center; color:floralwhite};
+        </style>
+        <div class="email-container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Contact Me!</h3>
+                <input type="text" id="name" placeholder=" Name" required>
+                <input type="email" id="email" placeholder=" Email Adress" required>
+                <input type="text" id="phone" placeholder=" Phone No." required>
+                <textarea id="contact-message" rows="4" placeholder="How can we help you?" required></textarea>
+                <button type="contact-submit">Send</button>
+            </form>
+        </div>
+
+        <script>
+            function sendEmail() {
+                let message = document.querySelector("#contact-message");
+                message.innerHTML= "Response Submitted!";
+            }
+        </script>
+
+        <h5 id="contact-message"> </h5>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        
+    </div>
+    
+    
+</body>
+</html>
